@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  *@author:    niyodon paci
  * Email:     niyodonpaci@gmail.com
- * Date :     Le 26/08/2025
+ * Date :     Le 25/08/2025
  * Gitgub:    https://github.com/niyodon3564
 */
 class Carousel extends MY_Controller {

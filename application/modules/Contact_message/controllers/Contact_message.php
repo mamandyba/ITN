@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  *@author:    nihimbazwe egide
  * Email:     nihimbazweegide3@gmail.com
- * Date:      Le27/08/2025
+ * Date:      Le28/08/2025
 */
 class Contact_message extends MY_Controller {
 
