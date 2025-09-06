@@ -141,12 +141,4 @@ $route['Contact_messageDetail/(:any)'] = 'Contact_message/Contact_messageDetail/
 $route['SaveDetail'] = 'Contact_message/SaveDetail';
 
 
-//newletter module
 
-$route['New_letter'] = 'New_letter/New_letter';
-$route['CreateNew_letter'] = 'New_letter/CreateNew_letter';
-$route['UpdateNew_letter'] = 'New_letter/UpdateNew_letter';
-$route['DeleteNew_letter'] = 'New_letter/DeleteNew_letter';
-$route['ChangeStatus'] = 'New_letter/ChangeStatus';
-$route['New_letterDetail/(:any)'] = 'New_letter/New_letterDetail/$1';
-$route['SaveDetail'] = 'New_letter/SaveDetail';
