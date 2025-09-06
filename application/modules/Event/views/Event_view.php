@@ -31,6 +31,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Image</th>
                             <th>Title</th>
                             <th>Type</th>
                             <th>Start Date</th>
@@ -50,6 +51,12 @@
     <?php $i=1; foreach ($Event as $value) {  ?>
     <tr>
         <td><?=$i++;?></td>
+        <td>
+        <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#Image_<?=$value['id']?>">
+        <img src="<?=base_url()?>attachments/Event/<?=$value['featured_image']?>" style="width:50px; height:50px; border-radius:50%;">
+        </a>
+
+        </td>
         <td><?=$value['title']?></td>
         <td><?=$value['type_name']?></td>
         <td><?=$value['start_date']?></td>
@@ -156,22 +163,10 @@
                         <label class="form-label">Content</label>
                         <textarea class="form-control" name="content"><?=$value['content']?></textarea>
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Featured Image</label>
-                        <input type="file" class="form-control" name="featured_image">
-                        <?php if (!empty($value['featured_image'])): ?>
-                            <div style="margin-top:5px;">
-                                <p>Current Image:</p> 
-                                <img src="<?= base_url('attachments/Event/'.$value['featured_image']) ?>" 
-                                    alt="Featured Image" 
-                                    style="width:80px; height:80px; border:1px solid #ccc; padding:2px;">
-                            </div>
-                        <?php else: ?>
-                            <div style="margin-top:5px;">
-                                <p>No image available</p>
-                            </div>
-                        <?php endif; ?>
-                        <small class="text-muted">Leave empty to keep the current image</small>
+                    <div class="mb-3 position-relative col-md-6">
+                      <label class="form-label">Image</label>
+                         <input type="file" class="form-control" name="featured_image">
+                         <input type="hidden" name="HiddenImage" value="<?=$value['featured_image']?>">
                     </div>
 
 
@@ -188,7 +183,7 @@
 </div>
 
 
-<!--<div class="modal fade" id="Image_<?=$value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static"> 
+<div class="modal fade" id="Image_<?=$value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static"> 
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -196,14 +191,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-              <img src="<?=base_url()?>attachments/Event/<?=$value['logo']?>" style="width: 750px; height:500px;">
+              <img src="<?=base_url()?>attachments/Event/<?=$value['featured_image']?>" style="width: 750px; height:500px;">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> 
             </div>   
         </div>
     </div>
-</div>-->
+</div>
 <div class="modal fade" id="Status_<?=$value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -253,14 +248,20 @@
 <?php } ?>
                     </tbody>
                     <tfoot>
-                        <tr>
+                          <tr>
                             <th>#</th>
+                            <th>Image</th>
                             <th>Title</th>
                             <th>Type</th>
                             <th>Start Date</th>
                             <th>End Date</th>
                             <th>Location</th>
+                            <!-- <th>Location</th> -->
                             <th>Status</th>
+                            <th>Fees</th>
+                            <th>Max_participants</th>
+                            <th>created_at</th>
+
                             <!-- <th>Created At</th> -->
                             <th>Action</th>
                         </tr>
@@ -354,9 +355,9 @@
                         <label class="form-label">Content</label>
                         <textarea class="form-control" name="content"></textarea>
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label">Featured Image</label>
-                        <input type="file" class="form-control" name="featured_image">
+                    <div class="mb-3 position-relative col-md-6">
+                      <label class="form-label">Image</label>
+                      <input type="file" class="form-control" name="featured_image" required="">
                     </div>
                 </div>
                 <div class="modal-footer">
