@@ -78,9 +78,6 @@ class Contact_message extends MY_Controller {
         $message = $this->input->post('message');
         $type = $this->input->post('type') ?? 'general';
         $status = $this->input->post('sratus') ?? 'new';
-        
-        // Valeurs par défaut
-        //$status = 'new'; // Au lieu de is_active
         $ip_address = $this->input->ip_address();
         $user_agent = $this->input->user_agent();
         $created_at = date('Y-m-d H:i:s');

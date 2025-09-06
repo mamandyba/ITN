@@ -76,7 +76,7 @@ class Event_type extends MY_Controller {
         $name = $this->input->post('name');
         $description = $this->input->post('description');
         $color = $this->input->post('color');
-        if (empty($color)) $color = '#007bff'; // couleur par défaut
+        if (empty($color)) $color = '#007bff'; 
         $created_at = $this->input->post('created_at');
 
         $data = array(
