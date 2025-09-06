@@ -76,10 +76,11 @@ class Contact_message extends MY_Controller {
         $phone = $this->input->post('phone');
         $subject = $this->input->post('subject');
         $message = $this->input->post('message');
-        $type = $this->input->post('type');
+        $type = $this->input->post('type') ?? 'general';
+        $status = $this->input->post('sratus') ?? 'new';
         
         // Valeurs par défaut
-        $status = 'new'; // Au lieu de is_active
+        //$status = 'new'; // Au lieu de is_active
         $ip_address = $this->input->ip_address();
         $user_agent = $this->input->user_agent();
         $created_at = date('Y-m-d H:i:s');
@@ -119,8 +120,8 @@ class Contact_message extends MY_Controller {
         $phone = $this->input->post('phone');
         $subject = $this->input->post('subject');
         $message = $this->input->post('message');
-        $type = $this->input->post('type');
-        $status = $this->input->post('status');
+        $type = $this->input->post('type') ?? 'general';
+        $status = $this->input->post('status') ?? 'new';
         $assigned_to = $this->input->post('assigned_to');
         $updated_at = date('Y-m-d H:i:s');
 
