@@ -93,7 +93,7 @@ class Event_registration extends MY_Controller {
             'event_id'          => $this->input->post('event_id'),
             'user_id'           => $this->input->post('user_id'),
             'registration_date' => $this->input->post('registration_date'),
-            'status'            => $this->input->post('status'),
+            'status'            => $this->input->post('status')  ?? 'registered',
             'notes'             => $this->input->post('notes'),
             'updated_at'        => date('Y-m-d H:i:s')
         ];

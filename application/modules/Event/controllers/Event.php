@@ -10,7 +10,7 @@ class Event extends MY_Controller {
     function __construct()
     {
         parent::__construct();
-        // $this->not_logged_in();
+        
     }
 
     public function index()
@@ -21,7 +21,6 @@ class Event extends MY_Controller {
                 ORDER BY e.id DESC";
         $data['Event'] = $this->Model->readQuery($sql);
 
-        // charger aussi les types pour le formulaire create/update
         $data['event_types'] = $this->Model->read('event_types', null, 'id');
 
         $this->load->view('Event_View', $data);
@@ -59,7 +58,7 @@ class Event extends MY_Controller {
         $id = $this->input->post('id');
         $description = $this->input->post('description');
 
-        $rsp = $this->Model->update('events', ['id' => $id], ['description' => $description]);
+        $rsp = $this->Model->update('events', ['id' => $id], ['description' => $detail]);
 
         if ($rsp) {
             $sms['sms'] = '<div class="alert alert-success fade show mt-1 message" role="alert">
@@ -157,7 +156,7 @@ class Event extends MY_Controller {
         $is_featured = $this->input->post('is_featured') ?? 0;
         $updated_at = date('Y-m-d H:i:s');
 
-        // Gestion image
+      
         if (!empty($_FILES['featured_image']['name'])) {
             $featured_image = $this->upload_document(
                 $_FILES['featured_image']['tmp_name'],

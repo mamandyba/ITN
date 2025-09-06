@@ -33,6 +33,9 @@
                             <th>#</th>
                             <th>Image</th>
                             <th>Title</th>
+                            <th>Slug</th>
+                            <th>description</th>
+                            <th>content</th>
                             <th>Type</th>
                             <th>Start Date</th>
                             <th>End Date</th>
@@ -58,13 +61,16 @@
 
         </td>
         <td><?=$value['title']?></td>
+        <td><?=$value['slug']?></td>
+        <td><?=substr($value['description'],0,50)?></td>
+        <td><?=$value['content']?></td>
         <td><?=$value['type_name']?></td>
         <td><?=$value['start_date']?></td>
         <td><?=$value['end_date']?></td>
         <td><?=$value['location']?></td>
          <td>
-              <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#Status_<?=$value['id']?>">
-              <?= $value['status'] ?></a>
+            <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#Status_<?=$value['id']?>">
+            <?= $value['status'] ?></a>
         </td>
         <td><?=$value['fees']?></td>
         <td><?=$value['max_participants']?></td>
